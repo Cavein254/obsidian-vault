@@ -1,0 +1,181 @@
+{
+  "main": {
+    "id": "4b09f7132bc95b57",
+    "type": "split",
+    "children": [
+      {
+        "id": "bb96386bddad1753",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a1424bcd3ff5129c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Financial Engineering/Stochastic Modelling/unit one/Option Valuation.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Option Valuation"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8a8f63467d10a27d",
+    "type": "split",
+    "children": [
+      {
+        "id": "50c145a7c2678a02",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0455932382d3987f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "432fe41fa6d8fc84",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "13d0e9368cd50f78",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "d04f3a924a16badc",
+    "type": "split",
+    "children": [
+      {
+        "id": "ace0f742914343c7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1b8d4f7da83a2ad7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Financial Engineering/Stochastic Modelling/unit one/Option Valuation.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Option Valuation"
+            }
+          },
+          {
+            "id": "e2fc9ac361c268a0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Financial Engineering/Stochastic Modelling/unit one/Option Valuation.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Option Valuation"
+            }
+          },
+          {
+            "id": "0d0d2c3c286432e4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b949ef3da15df148",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Financial Engineering/Stochastic Modelling/unit one/Option Valuation.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Option Valuation"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "a1424bcd3ff5129c",
+  "lastOpenFiles": [
+    "Financial Engineering/Stochastic Modelling/unit one/imgs/figure1.png",
+    "Financial Engineering/Stochastic Modelling/unit one/imgs",
+    "Financial Engineering/Stochastic Modelling/unit one/Option Valuation.md",
+    "Financial Engineering/Stochastic Modelling/unit one",
+    "Financial Engineering/Stochastic Modelling",
+    "Financial Engineering",
+    "Welcome.md"
+  ]
+}
