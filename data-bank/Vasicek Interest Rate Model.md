@@ -12,3 +12,31 @@ $a(b-r_t)dt$ is the deterministic part and $\sigma dW_t$ is the stochastic part.
 
 ## Calibration
 *Maximum Likelihood Estimator (MLE)* is a method which is used to find the best fitting parameters for a mathematical model, based on obtained data.
+In the case of the vasicek model, the MLE adjusts the $a,b$ and $\sigma$. 
+This is done using the following steps:
+### Step 1 - Calculate the change in interest rates
+This is done by getting the change in actual interest rates and also finding the change in interest rates given by the vasicek model.
+
+| Actual Interest rate $(r_{tA})$ | Vasicek Interest Rate $(r_{tV}$) | $\Delta r_{tA}$ | $\Delta r_{tV}$ |
+| :-----------------------------: | -------------------------------- | --------------- | --------------- |
+|               5.1               | 4.5                              | 5.9-5.1         | 4.88 - 4.5      |
+|               5.9               | 4.88                             |                 |                 |
+|                .                | .                                |                 |                 |
+|                .                | .                                |                 |                 |
+
+### Step 2 - Calculate the residual
+| $\Delta r_{tA}$ | $\Delta r_{tV}$ | Residual ($\Delta r_{tA}$ - $\Delta r_{tV}$) |
+| :-------------: | --------------- | -------------------------------------------- |
+|      0.002      | 0.0015          | 0.002 - 0.0015                               |
+### Step 3 - Take Likelihood Function
+Take the normal distribution of the residuals with mean = 0 and std = $\sigma$
+
+| $\Delta r_{tA}$ | $\Delta r_{tV}$ | Residual ($\Delta r_{tA}$ - $\Delta r_{tV}$) | Normal Distribution |
+| :-------------: | --------------- | -------------------------------------------- | ------------------- |
+|      0.002      | 0.0015          | 0.002 - 0.0015                               |                     |
+
+### Step 4 - Take log Likelihood Function
+
+| $\Delta r_{tA}$ | $\Delta r_{tV}$ | Residual ($\Delta r_{tA}$ - $\Delta r_{tV}$) | Normal distribution | Log Normal Distribution |
+| :-------------: | --------------- | -------------------------------------------- | ------------------- | ----------------------- |
+|      0.002      | 0.0015          | 0.002 - 0.0015                               |                     |                         |
