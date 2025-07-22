@@ -2,7 +2,7 @@ Vasicek Interest rate model is a mathematical method of modelling the movement a
 Apart from Vasicek, there are other single factor models that exists:
 	i. *Merton Model -* This is helpful in determining the company's credit risk
 	ii. *Cox-Ingersoll-Ross Model -* determines the interest rates in future by incorporating volatility, mean, and spread
-	iii. *Hull-While Model -* Used to price interest rate derivatives. Assumes volatility will be low when short-term interest rates are near zero.
+	iii. *Hull-White Model -* Used to price interest rate derivatives. Assumes volatility will be low when short-term interest rates are near zero.
 $$dr_t = a(b -r_t)dt + \sigma dW_t$$
 Where:
 
@@ -46,3 +46,6 @@ Take the normal distribution of the residuals with mean = 0 and std = $\sigma$
 | $\Delta r_{tA}$ | $\Delta r_{tV}$ | Residual ($\Delta r_{tA}$ - $\Delta r_{tV}$) | Normal distribution | Log Normal Distribution |
 | :-------------: | --------------- | -------------------------------------------- | ------------------- | ----------------------- |
 |      0.002      | 0.0015          | 0.002 - 0.0015                               |                     |                         |
+
+# References
+https://www.soa.org/48e9a7/globalassets/assets/files/resources/research-report/2023/interest-rate-model-calibration-study.pdf
