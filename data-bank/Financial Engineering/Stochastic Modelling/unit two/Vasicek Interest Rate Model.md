@@ -48,62 +48,7 @@ $$\hat{\sigma} = \sqrt{\frac{Var(\epsilon_t)}{\Delta t}}$$
 - Check residual for normality and independence
 - Compare model with yield curve or bond prices to observed market data
 
-```py
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import statsmodels.api as sm
-from pandas_datareader import data as pdr
-import datetime
 
-# Step 1: Load historical interest rate data (3-Month Treasury Bill Rate)
-start = datetime.datetime(2010, 1, 1)
-end = datetime.datetime(2024, 12, 31)
-
-df = pdr.DataReader('TB3MS', 'fred', start, end)
-df = df.dropna()
-df = df.rename(columns={'TB3MS': 'r_t'})
-df = df / 100  # convert percentage to decimal
-
-# Step 2: Prepare data for OLS
-df['r_t+1'] = df['r_t'].shift(-1)
-df.dropna(inplace=True)
-
-X = df['r_t'].values
-Y = df['r_t+1'].values
-
-# Add constant for intercept
-X_const = sm.add_constant(X)
-
-# Step 3: Run OLS regression
-model = sm.OLS(Y, X_const)
-results = model.fit()
-alpha_hat, beta_hat = results.params
-print(results.summary())
-
-# Step 4: Estimate Vasicek parameters
-delta_t = 1/12  # monthly data
-
-a = -np.log(beta_hat) / delta_t
-b = alpha_hat / (1 - beta_hat)
-residuals = Y - (alpha_hat + beta_hat * X)
-sigma_hat = np.std(residuals) / np.sqrt(delta_t)
-
-# Step 5: Output results
-print("=== Vasicek Parameters Estimated via OLS ===")
-print(f"Speed of mean reversion (a): {a:.4f}")
-print(f"Long-term mean rate (b):     {b:.4f}")
-print(f"Volatility (sigma):          {sigma_hat:.4f}")
-
-# Optional: Plot actual vs predicted
-df['r_pred'] = alpha_hat + beta_hat * df['r_t']
-df[['r_t+1', 'r_pred']].plot(title='Vasicek using OLS Actual vs Predicted r(t+1)', figsize=(10, 5))
-plt.xlabel('Date')
-plt.ylabel('Rate')
-plt.show()
-
-```
-![vasicek OLS](./img/vasicek01.png)
 ## Alternatively, using MLE
 Using the maximum Likelihood Method (MLE) method to calibrate Vasicek model is more efficient compared to the OLS method. 
 ### Step 1: Get the Transition Distribution
@@ -132,72 +77,108 @@ After finding the optimal a,b,σ:
 - Plot residuals to verify normality and independence
 
 ```py
-import pandas as pd
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 from pandas_datareader import data as pdr
 from scipy.optimize import minimize
+import statsmodels.api as sm
 import datetime
 
-# Step 1: Load 3-month Treasury Bill data from FRED
-start = datetime.datetime(2010, 1, 1)
-end = datetime.datetime(2024, 12, 31)
+# === STEP 1: Load real market data ===
+def load_data():
+    start = datetime.datetime(2010, 1, 1)
+    end = datetime.datetime(2024, 12, 31)
+    df = pdr.DataReader('TB3MS', 'fred', start, end).dropna()
+    df = df.rename(columns={'TB3MS': 'rate'})
+    df['rate'] = df['rate'] / 100  # Convert to decimal
+    df['rate_next'] = df['rate'].shift(-1)
+    df.dropna(inplace=True)
+    return df
 
-df = pdr.DataReader('TB3MS', 'fred', start, end)
-df = df.dropna()
-df = df.rename(columns={'TB3MS': 'rate'})
-df['rate'] = df['rate'] / 100  # Convert to decimal (e.g., 0.05 for 5%)
-df['rate_next'] = df['rate'].shift(-1)
-df = df.dropna()
+# === STEP 2: Vasicek OLS calibration ===
+def vasicek_OLS(rates, delta_t):
+    r_t = rates[:-1]
+    r_next = rates[1:]
 
-r_t = df['rate'].values[:-1]
-r_next = df['rate_next'].values[:-1]
-delta_t = 1 / 12  # Monthly data
+    X = sm.add_constant(r_t)
+    model = sm.OLS(r_next, X)
+    results = model.fit()
+    alpha_hat, beta_hat = results.params
 
-# Step 2: Define the negative log-likelihood function for Vasicek
-def vasicek_neg_log_likelihood(params, r_t, r_next, delta_t):
-    a, b, sigma = params
-    if a <= 0 or sigma <= 0:
-        return np.inf  # Invalid parameters
+    a = -np.log(beta_hat) / delta_t
+    b = alpha_hat / (1 - beta_hat)
+    residuals = r_next - (alpha_hat + beta_hat * r_t)
+    sigma = np.std(residuals) / np.sqrt(delta_t)
 
-    n = len(r_t)
+    return {'a': a, 'b': b, 'sigma': sigma, 'predicted': alpha_hat + beta_hat * r_t}
+
+# === STEP 3: Vasicek MLE calibration ===
+def vasicek_MLE(rates, delta_t):
+    r_t = rates[:-1]
+    r_next = rates[1:]
+
+    def neg_log_likelihood(params):
+        a, b, sigma = params
+        if a <= 0 or sigma <= 0:
+            return np.inf
+        mu = b + (r_t - b) * np.exp(-a * delta_t)
+        var = (sigma ** 2) / (2 * a) * (1 - np.exp(-2 * a * delta_t))
+        return 0.5 * np.sum(np.log(2 * np.pi * var) + ((r_next - mu) ** 2) / var)
+
+    initial = [0.1, 0.03, 0.01]
+    bounds = [(1e-5, None), (0, 1), (1e-5, None)]
+    result = minimize(neg_log_likelihood, initial, method='L-BFGS-B', bounds=bounds)
+    a, b, sigma = result.x
+
     mu = b + (r_t - b) * np.exp(-a * delta_t)
-    variance = (sigma ** 2) / (2 * a) * (1 - np.exp(-2 * a * delta_t))
+    return {'a': a, 'b': b, 'sigma': sigma, 'predicted': mu}
 
-    # Log-likelihood of normally distributed r_next
-    log_likelihood = -0.5 * np.sum(np.log(2 * np.pi * variance) +
-                                   ((r_next - mu) ** 2) / variance)
-    return -log_likelihood  # Negative for minimization
+# === STEP 4: Evaluation ===
+def evaluate_model(predicted, actual):
+    return np.sqrt(np.mean((predicted - actual) ** 2))
 
-# Step 3: Initial guess and optimization
-initial_guess = [0.1, 0.03, 0.01]  # [a, b, sigma]
-bounds = [(1e-5, None), (0, 1), (1e-5, None)]  # a > 0, sigma > 0
+# === RUN EVERYTHING ===
+df = load_data()
+rates = df['rate'].values
+delta_t = 1 / 12  # monthly
 
-result = minimize(vasicek_neg_log_likelihood, initial_guess,
-                  args=(r_t, r_next, delta_t), method='L-BFGS-B', bounds=bounds)
+ols_result = vasicek_OLS(rates, delta_t)
+mle_result = vasicek_MLE(rates, delta_t)
 
-a_mle, b_mle, sigma_mle = result.x
+actual = df['rate'].values[1:]
 
-# Step 4: Output results
-print("=== Vasicek Parameters Estimated via MLE ===")
-print(f"Speed of mean reversion (a): {a_mle:.4f}")
-print(f"Long-term mean rate (b):     {b_mle:.4f}")
-print(f"Volatility (sigma):          {sigma_mle:.4f}")
+print("\n=== Vasicek OLS Calibration ===")
+print(f"a: {ols_result['a']:.4f}, b: {ols_result['b']:.4f}, sigma: {ols_result['sigma']:.4f}")
+rmse_ols = evaluate_model(ols_result['predicted'], actual)
+print(f"RMSE: {rmse_ols:.6f}")
 
-# Optional: Plot actual vs expected next rate
-mu = b_mle + (r_t - b_mle) * np.exp(-a_mle * delta_t)
-plt.figure(figsize=(10, 5))
-plt.plot(df.index[:-1], r_next, label='Observed r(t+1)', alpha=0.6)
-plt.plot(df.index[:-1], mu, label='Expected r(t+1) under Vasicek', alpha=0.8)
-plt.legend()
-plt.title('Vasicek using MLE Observed vs Expected Interest Rate')
-plt.ylabel('Rate')
+print("\n=== Vasicek MLE Calibration ===")
+print(f"a: {mle_result['a']:.4f}, b: {mle_result['b']:.4f}, sigma: {mle_result['sigma']:.4f}")
+rmse_mle = evaluate_model(mle_result['predicted'], actual)
+print(f"RMSE: {rmse_mle:.6f}")
+
+# === PLOT COMPARISON ===
+plt.figure(figsize=(12, 6))
+plt.plot(df.index[1:], actual, label='Actual r(t+1)', alpha=0.7)
+plt.plot(df.index[1:], ols_result['predicted'], label='OLS Predicted', linestyle='--')
+plt.plot(df.index[1:], mle_result['predicted'], label='MLE Predicted', linestyle=':')
+plt.title('Vasicek Model 1-Step Ahead Predictions')
 plt.xlabel('Date')
+plt.ylabel('Interest Rate')
+plt.legend()
 plt.grid(True)
 plt.show()
-
 ```
-![vasicek MLE](./img/vasicek02.png)
+```bash
+=== Vasicek OLS Calibration ===
+a: -0.0576, b: -0.0392, sigma: 0.0053
+RMSE: 0.001541
+
+=== Vasicek MLE Calibration ===
+a: 0.0030, b: 1.0000, sigma: 0.0053
+RMSE: 0.001543
+```
 # References
 https://www.soa.org/48e9a7/globalassets/assets/files/resources/research-report/2023/interest-rate-model-calibration-study.pdf
 
