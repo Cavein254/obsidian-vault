@@ -97,12 +97,13 @@ print(f"Volatility (sigma):          {sigma_hat:.4f}")
 
 # Optional: Plot actual vs predicted
 df['r_pred'] = alpha_hat + beta_hat * df['r_t']
-df[['r_t+1', 'r_pred']].plot(title='Actual vs Predicted r(t+1)', figsize=(10, 5))
+df[['r_t+1', 'r_pred']].plot(title='Vasicek using OLS Actual vs Predicted r(t+1)', figsize=(10, 5))
 plt.xlabel('Date')
 plt.ylabel('Rate')
 plt.show()
 
 ```
+![vasicek OLS](./img/vasicek01.png)
 ## Alternatively, using MLE
 Using the maximum Likelihood Method (MLE) method to calibrate Vasicek model is more efficient compared to the OLS method. 
 ### Step 1: Get the Transition Distribution
@@ -129,6 +130,74 @@ After finding the optimal a,b,σ:
 - Simulate paths or calculate bond prices
 - Compare to actual data or yields
 - Plot residuals to verify normality and independence
+
+```py
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from pandas_datareader import data as pdr
+from scipy.optimize import minimize
+import datetime
+
+# Step 1: Load 3-month Treasury Bill data from FRED
+start = datetime.datetime(2010, 1, 1)
+end = datetime.datetime(2024, 12, 31)
+
+df = pdr.DataReader('TB3MS', 'fred', start, end)
+df = df.dropna()
+df = df.rename(columns={'TB3MS': 'rate'})
+df['rate'] = df['rate'] / 100  # Convert to decimal (e.g., 0.05 for 5%)
+df['rate_next'] = df['rate'].shift(-1)
+df = df.dropna()
+
+r_t = df['rate'].values[:-1]
+r_next = df['rate_next'].values[:-1]
+delta_t = 1 / 12  # Monthly data
+
+# Step 2: Define the negative log-likelihood function for Vasicek
+def vasicek_neg_log_likelihood(params, r_t, r_next, delta_t):
+    a, b, sigma = params
+    if a <= 0 or sigma <= 0:
+        return np.inf  # Invalid parameters
+
+    n = len(r_t)
+    mu = b + (r_t - b) * np.exp(-a * delta_t)
+    variance = (sigma ** 2) / (2 * a) * (1 - np.exp(-2 * a * delta_t))
+
+    # Log-likelihood of normally distributed r_next
+    log_likelihood = -0.5 * np.sum(np.log(2 * np.pi * variance) +
+                                   ((r_next - mu) ** 2) / variance)
+    return -log_likelihood  # Negative for minimization
+
+# Step 3: Initial guess and optimization
+initial_guess = [0.1, 0.03, 0.01]  # [a, b, sigma]
+bounds = [(1e-5, None), (0, 1), (1e-5, None)]  # a > 0, sigma > 0
+
+result = minimize(vasicek_neg_log_likelihood, initial_guess,
+                  args=(r_t, r_next, delta_t), method='L-BFGS-B', bounds=bounds)
+
+a_mle, b_mle, sigma_mle = result.x
+
+# Step 4: Output results
+print("=== Vasicek Parameters Estimated via MLE ===")
+print(f"Speed of mean reversion (a): {a_mle:.4f}")
+print(f"Long-term mean rate (b):     {b_mle:.4f}")
+print(f"Volatility (sigma):          {sigma_mle:.4f}")
+
+# Optional: Plot actual vs expected next rate
+mu = b_mle + (r_t - b_mle) * np.exp(-a_mle * delta_t)
+plt.figure(figsize=(10, 5))
+plt.plot(df.index[:-1], r_next, label='Observed r(t+1)', alpha=0.6)
+plt.plot(df.index[:-1], mu, label='Expected r(t+1) under Vasicek', alpha=0.8)
+plt.legend()
+plt.title('Vasicek using MLE Observed vs Expected Interest Rate')
+plt.ylabel('Rate')
+plt.xlabel('Date')
+plt.grid(True)
+plt.show()
+
+```
+![vasicek MLE](./img/vasicek02.png)
 # References
 https://www.soa.org/48e9a7/globalassets/assets/files/resources/research-report/2023/interest-rate-model-calibration-study.pdf
 
