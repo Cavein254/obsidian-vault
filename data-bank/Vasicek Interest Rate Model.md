@@ -48,6 +48,61 @@ $$\hat{\sigma} = \sqrt{\frac{Var(\epsilon_t)}{\Delta t}}$$
 - Check residual for normality and independence
 - Compare model with yield curve or bond prices to observed market data
 
+```py
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+from pandas_datareader import data as pdr
+import datetime
+
+# Step 1: Load historical interest rate data (3-Month Treasury Bill Rate)
+start = datetime.datetime(2010, 1, 1)
+end = datetime.datetime(2024, 12, 31)
+
+df = pdr.DataReader('TB3MS', 'fred', start, end)
+df = df.dropna()
+df = df.rename(columns={'TB3MS': 'r_t'})
+df = df / 100  # convert percentage to decimal
+
+# Step 2: Prepare data for OLS
+df['r_t+1'] = df['r_t'].shift(-1)
+df.dropna(inplace=True)
+
+X = df['r_t'].values
+Y = df['r_t+1'].values
+
+# Add constant for intercept
+X_const = sm.add_constant(X)
+
+# Step 3: Run OLS regression
+model = sm.OLS(Y, X_const)
+results = model.fit()
+alpha_hat, beta_hat = results.params
+print(results.summary())
+
+# Step 4: Estimate Vasicek parameters
+delta_t = 1/12  # monthly data
+
+a = -np.log(beta_hat) / delta_t
+b = alpha_hat / (1 - beta_hat)
+residuals = Y - (alpha_hat + beta_hat * X)
+sigma_hat = np.std(residuals) / np.sqrt(delta_t)
+
+# Step 5: Output results
+print("=== Vasicek Parameters Estimated via OLS ===")
+print(f"Speed of mean reversion (a): {a:.4f}")
+print(f"Long-term mean rate (b):     {b:.4f}")
+print(f"Volatility (sigma):          {sigma_hat:.4f}")
+
+# Optional: Plot actual vs predicted
+df['r_pred'] = alpha_hat + beta_hat * df['r_t']
+df[['r_t+1', 'r_pred']].plot(title='Actual vs Predicted r(t+1)', figsize=(10, 5))
+plt.xlabel('Date')
+plt.ylabel('Rate')
+plt.show()
+
+```
 ## Alternatively, using MLE
 Using the maximum Likelihood Method (MLE) method to calibrate Vasicek model is more efficient compared to the OLS method. 
 ### Step 1: Get the Transition Distribution
