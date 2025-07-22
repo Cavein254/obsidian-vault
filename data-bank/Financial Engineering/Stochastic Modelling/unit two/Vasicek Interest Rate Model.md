@@ -170,6 +170,9 @@ plt.legend()
 plt.grid(True)
 plt.show()
 ```
+
+![vasicek combined](./img/vasicek03.png)
+
 ```bash
 === Vasicek OLS Calibration ===
 a: -0.0576, b: -0.0392, sigma: 0.0053
@@ -179,6 +182,16 @@ RMSE: 0.001541
 a: 0.0030, b: 1.0000, sigma: 0.0053
 RMSE: 0.001543
 ```
+
+#### Interpretation
+##### Vasicek OLS Model
+In the vasicek OLS model calibration we find the values $a = -0.0576, b = -0.0392, \sigma = 0.0053$, and $RMSE = 0.01541$
+- Automatically from the value of `a` the model has an error as `a` should be positive as it represents the revert rate speed to the mean. A negative values indicates that the model is divergent hence violating the model assumption.
+- The value of `b` is also negative. Although the Vasicek model allows for negative interest rates its economically unrealistic in the long-term. Moreover, we are dealing with the U.S. which has had no history of negative interest rates.
+
+##### Vasicek MLE Model
+In the vasicek MLE model calibration we find the values $a = 0.0030, b = 1.000, \sigma = 0.0053$, and $RMSE = 0.001543$. 
+- The value of `b` is suspicious. It's unrealistic for `b` to be 100%. This may be an issue of over-fitting or poor local minimum in the optimization. 
 # References
 https://www.soa.org/48e9a7/globalassets/assets/files/resources/research-report/2023/interest-rate-model-calibration-study.pdf
 
