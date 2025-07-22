@@ -47,6 +47,33 @@ $$\hat{\sigma} = \sqrt{\frac{Var(\epsilon_t)}{\Delta t}}$$
 ### Step 4: Validation
 - Check residual for normality and independence
 - Compare model with yield curve or bond prices to observed market data
+
+## Alternatively, using MLE
+Using the maximum Likelihood Method (MLE) method to calibrate Vasicek model is more efficient compared to the OLS method. 
+### Step 1: Get the Transition Distribution
+The vasicek model has a closed-form solution for its transition (conditional) distribution:
+$$r_{t+1}| r_t \sim \mathcal{N}(\mu_t, \sigma^2 _t) $$
+where:
+- $\mu_t = b + (r_t -b)e^{-\alpha \Delta t}$
+- $\sigma^2_t = \frac{\sigma^2}{2a}(1-e^{-2a\Delta t})$
+this gives the probability density of observing $r_{t + \Delta t}$ under parameters $a,b,\sigma$
+
+### Step 2: Write the Log-Likelihood fn
+Given a time series of interest rates $r_0, r_1..., r_n$ at interval $\Delta t$, the log-likelihood is:
+$$\mathcal{L}(a,b,\sigma) = \sum^n_{i = 1}log f(r_i|r_{i-1}; a,b,\sigma)$$
+where each term in the sum is the log of the normal density:
+$$log f(r_i|r_i-1) = - \frac{1}{2}log(2\pi \sigma^2_t)- \frac{r_i -\mu_{i-1}^2}{2\sigma^2_t}$$
+where:
+- $\mu_t = b + (r_t -b)e^{-\alpha \Delta t}$
+- $\sigma^2_t = \frac{\sigma^2}{2a}(1-e^{-2a\Delta t})$
+### Step 3: Maximize the Log-Likelihood
+Now that you have a function L(a,b,σ)L(a,b,σ), use a numerical optimizer to find the parameter values that maximize it.
+
+### Step 4: Evaluate the fit
+After finding the optimal a,b,σ:
+- Simulate paths or calculate bond prices
+- Compare to actual data or yields
+- Plot residuals to verify normality and independence
 # References
 https://www.soa.org/48e9a7/globalassets/assets/files/resources/research-report/2023/interest-rate-model-calibration-study.pdf
 
