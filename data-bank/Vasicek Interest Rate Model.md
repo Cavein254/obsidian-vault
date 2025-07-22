@@ -1,5 +1,11 @@
+Vasicek Interest rate model is a mathematical method of modelling the movement and evolution of interest rates. It is a single factor model that predicts the evolution of interest rate prices over time. Since it is a single factor model, it takes into account only the market risk.
+Apart from Vasicek, there are other single factor models that exists:
+	i. *Merton Model -* This is helpful in determining the company's credit risk
+	ii. *Cox-Ingersoll-Ross Model -* determines the interest rates in future by incorporating volatility, mean, and spread
+	iii. *Hull-While Model -* Used to price interest rate derivatives. Assumes volatility will be low when short-term interest rates are near zero.
 $$dr_t = a(b -r_t)dt + \sigma dW_t$$
 Where:
+
 - $d_t$ - change in interest rate
 - $a$ - speed of mean reversion i.e. how fast the interest rate returns to the mean
 - $b$ - long term average rate
@@ -7,7 +13,7 @@ Where:
 - $dt$ - small change in time $\frac{1}{252}$
 - $\sigma$ - volatility of interest rate
 - $dW_t$ - Wiener process (Brownian Motion). The randomness or unpredictability fluctuation in interest over time. $dW_t = Z_t  \sqrt{\Delta t}$  where $Z_t$ is a random generated number from a standard normal distribution.
-$a(b-r_t)dt$ is the deterministic part and $\sigma dW_t$ is the stochastic part.
+$a(b-r_t)dt$ is the deterministic part (drift) and $\sigma dW_t$ is the stochastic part.
 
 
 ## Calibration
