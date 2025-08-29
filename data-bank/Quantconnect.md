@@ -1,0 +1,1 @@
+Issues regarding slow loading. Perform a ping test to their servers

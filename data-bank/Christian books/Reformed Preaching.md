@@ -1,0 +1,1 @@
+Reformed preaching is theocentric (God centered) rather than anthropocentric (man centred). 

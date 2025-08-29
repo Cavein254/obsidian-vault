@@ -4,91 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "bb96386bddad1753",
+        "id": "5689ed288211ffd1",
         "type": "tabs",
         "children": [
           {
-            "id": "a1424bcd3ff5129c",
+            "id": "76869027953285aa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Financial Engineering/Stochastic Modelling/unit one/Option Valuation.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Option Valuation"
-            }
-          },
-          {
-            "id": "df09a0ef24849ff8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Financial Engineering/Stochastic Modelling/unit two/Option Pricing Model.md",
+                "file": "Christian books/Reformed Preaching.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Option Pricing Model"
-            }
-          },
-          {
-            "id": "a0ba1df460377a66",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Financial Engineering/Stochastic Modelling/unit two/Vasicek Interest Rate Model.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Vasicek Interest Rate Model"
-            }
-          },
-          {
-            "id": "f928a3b9cbb7fa0a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Financial Engineering/Stochastic Modelling/unit two/Vasicek and Bond Pricing.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Vasicek and Bond Pricing"
-            }
-          },
-          {
-            "id": "2f75e4af252304fa",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
-            "id": "11f35e96b9d7293f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Stuff that needs attention.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Stuff that needs attention"
+              "title": "Reformed Preaching"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -224,8 +157,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-ghost",
+              "title": "git-view"
             }
           }
         ],
@@ -238,6 +171,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -247,30 +181,35 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "11f35e96b9d7293f",
+  "active": "76869027953285aa",
   "lastOpenFiles": [
-    "2025-08-22.md",
     "Stuff that needs attention.md",
-    "Personal",
+    "Quantconnect.md",
+    "Christian books/Reformed Preaching.md",
+    "Christian books",
+    "Untitled.base",
     "Untitled.canvas",
-    "Computer Engineering/Unix/Shell Scripting.md",
+    "commands.md",
+    "Running git locally.md",
     "Financial Engineering/Stochastic Modelling/unit two/Vasicek and Bond Pricing.md",
+    "Financial Engineering/Stochastic Modelling/unit two/Vasicek Interest Rate Model.md",
+    "Financial Engineering/Stochastic Modelling/unit two/Option Pricing Model.md",
+    "Financial Engineering/Stochastic Modelling/unit one/Option Valuation.md",
+    "2025-08-22.md",
+    "Personal",
+    "Computer Engineering/Unix/Shell Scripting.md",
     "Computer Engineering/Unix",
     "Computer Engineering",
-    "Financial Engineering/Stochastic Modelling/unit two/Vasicek Interest Rate Model.md",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek03.png",
-    "Financial Engineering/Stochastic Modelling/unit two/Option Pricing Model.md",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek02.png",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek01.png",
     "Financial Engineering/Stochastic Modelling/unit two/img",
-    "Financial Engineering/Stochastic Modelling/unit one/Option Valuation.md",
     "Financial Engineering/Stochastic Modelling/Terms.md",
     "Financial Engineering/Stochastic Modelling/unit two",
     "Financial Engineering/Stochastic Modelling/unit one/imgs/figure1.png",
     "Financial Engineering/Stochastic Modelling/unit one/imgs",
     "Financial Engineering/Stochastic Modelling/unit one",
     "Financial Engineering/Stochastic Modelling",
-    "Financial Engineering",
     "Welcome.md"
   ]
 }
