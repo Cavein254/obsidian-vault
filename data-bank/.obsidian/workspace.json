@@ -84,12 +84,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Recipies.md",
+                "file": "Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Recipies"
+              "title": "Untitled"
             }
           }
         ],
@@ -255,18 +255,18 @@
   },
   "active": "6a112430da562a48",
   "lastOpenFiles": [
-    "Untitled.md",
-    "Recipies.md",
     "Untitled.base",
+    "Things to do.md",
+    "Stuff that needs attention.md",
+    "Running git locally.md",
+    "Recipies.md",
+    "Untitled.md",
     "Bookmarks.md",
     "Bookmarks.canvas",
     "Untitled",
-    "Things to do.md",
     "Notes.md",
-    "Running git locally.md",
     "Quantconnect.md",
     "Christian books/Reformed Preaching.md",
-    "Stuff that needs attention.md",
     "Christian books",
     "commands.md",
     "Financial Engineering/Stochastic Modelling/unit two/Vasicek and Bond Pricing.md",
