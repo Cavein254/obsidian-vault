@@ -98,12 +98,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Django Packages'.md",
+                "file": "Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Django Packages'"
+              "title": "Untitled"
             }
           }
         ],
@@ -269,18 +269,18 @@
   },
   "active": "b6a4f21b45a054de",
   "lastOpenFiles": [
-    "Untitled.md",
-    "Django Packages'.md",
     "Untitled.base",
     "Things to do.md",
     "Stuff that needs attention.md",
+    "Quantconnect.md",
+    "Notes.md",
+    "Django Packages'.md",
+    "Untitled.md",
     "Running git locally.md",
     "Recipies.md",
     "Bookmarks.md",
     "Bookmarks.canvas",
     "Untitled",
-    "Notes.md",
-    "Quantconnect.md",
     "Christian books/Reformed Preaching.md",
     "Christian books",
     "commands.md",
