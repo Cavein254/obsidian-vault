@@ -110,13 +110,14 @@
             "id": "484c77e9125bae68",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Index.base",
-                "viewName": "Table"
+                "file": "Blender.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "Index"
+              "icon": "lucide-file",
+              "title": "Blender"
             }
           }
         ],
@@ -282,9 +283,9 @@
   },
   "active": "484c77e9125bae68",
   "lastOpenFiles": [
+    "Index.base",
     "Untitled.md",
     "Blender.md",
-    "Index.base",
     "Things to do.md",
     "Stuff that needs attention.md",
     "Quantconnect.md",
