@@ -98,16 +98,29 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Things to do.md",
+                "file": "Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Things to do"
+              "title": "Untitled"
+            }
+          },
+          {
+            "id": "484c77e9125bae68",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "Index.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "Index"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -267,10 +280,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b6a4f21b45a054de",
+  "active": "484c77e9125bae68",
   "lastOpenFiles": [
     "Untitled.md",
-    "Untitled.base",
+    "Blender.md",
+    "Index.base",
     "Things to do.md",
     "Stuff that needs attention.md",
     "Quantconnect.md",
