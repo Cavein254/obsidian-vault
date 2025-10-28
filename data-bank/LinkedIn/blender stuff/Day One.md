@@ -1,0 +1,1 @@
+I have always being interested in 3d but finding the time has been the tricky part. All aside I decided to bite the bullet and get started. This so far has been my week one in between my free-time, i have to learn the intractes of blender. Finally not super exerting render but it a start.

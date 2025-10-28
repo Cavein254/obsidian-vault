@@ -11,10 +11,14 @@
             "id": "52c154eab8121af1",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "LinkedIn/blender stuff/Day One.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Day One"
             }
           }
         ]
@@ -70,13 +74,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 290.5086555480957,
-    "collapsed": true
+    "width": 290.5086555480957
   },
   "right": {
     "id": "d04f3a924a16badc",
@@ -179,11 +181,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "52c154eab8121af1",
+  "active": "0455932382d3987f",
   "lastOpenFiles": [
-    "Untitled.canvas",
-    "Untitled 2.base",
     "Untitled 1.base",
+    "LinkedIn/blender stuff/Day One.md",
+    "Untitled 2.base",
+    "LinkedIn/blender stuff",
+    "LinkedIn",
+    "Untitled.canvas",
     "Untitled.base",
     "Future idea.md",
     "Blender.md",
@@ -198,7 +203,6 @@
     "Recipies.md",
     "Bookmarks.md",
     "Bookmarks.canvas",
-    "Untitled",
     "Christian books/Reformed Preaching.md",
     "Christian books",
     "commands.md",
@@ -214,7 +218,6 @@
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek03.png",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek02.png",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek01.png",
-    "Financial Engineering/Stochastic Modelling/unit two/img",
     "Financial Engineering/Stochastic Modelling/Terms.md",
     "Financial Engineering/Stochastic Modelling/unit one/imgs/figure1.png",
     "Welcome.md"
