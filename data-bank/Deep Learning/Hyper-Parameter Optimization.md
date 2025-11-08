@@ -2,3 +2,5 @@ Hyper-parameter are parameters that cannot be updated during training of ML. The
 Sigmoid activation function although the most popular activation functions used of recent they are falling in popularity
 $$f(x) = \frac{1}{1 + e^{-x}}$$
 Their major disadvantage the output of $f(x)$ corresponds very little to the input of $x$ giving rise to the problem of vanishing gradient. 
+![](img/train.png)
+As the figure above shows when we have a *high bias* the data is under-fitting and when there is a *high variance* the data is over-fitting
