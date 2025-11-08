@@ -2,3 +2,4 @@
 https://www.youtube.com/watch?v=TJZ2TutkYnA
 
 [Moi : the making of an African statesman](https://archive.org/details/moimakingofafric0000mort/page/n13/mode/2up)
+https://www.youtube.com/@Deeplearningai/courses
