@@ -48,9 +48,23 @@
               "icon": "lucide-file",
               "title": "Life"
             }
+          },
+          {
+            "id": "bce2c8e80b4ffa17",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Deep Learning/Hyper-Parameter Optimization.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Hyper-Parameter Optimization"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -210,10 +224,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5fde071a32a13551",
+  "active": "bce2c8e80b4ffa17",
   "lastOpenFiles": [
-    "Quantitative Finance.md",
     "Life.md",
+    "Deep Learning/Hyper-Parameter Optimization.md",
+    "Deep Learning",
+    "Quantitative Finance.md",
     "Untitled.md",
     "Untitled.base",
     "Things to do.md",
@@ -245,7 +261,6 @@
     "Personal",
     "Computer Engineering/Unix/Shell Scripting.md",
     "Computer Engineering/Unix",
-    "Computer Engineering",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek03.png",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek02.png",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek01.png",

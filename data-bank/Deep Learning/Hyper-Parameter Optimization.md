@@ -1,0 +1,1 @@
+Hyper-parameter are parameters that cannot be updated during training of ML. They provide structure to the model. 
