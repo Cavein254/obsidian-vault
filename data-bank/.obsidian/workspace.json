@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Life.md",
+                "file": "Deep Learning/Hyper-Parameter Optimization.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Life"
+              "title": "Hyper-Parameter Optimization"
             }
           },
           {
@@ -226,13 +226,13 @@
   },
   "active": "5fde071a32a13551",
   "lastOpenFiles": [
+    "Deep Learning/img/train.png",
+    "Life.md",
     "Deep Learning/Hyper-Parameter Optimization.md",
     "img.md",
-    "Deep Learning/img/train.png",
     "Deep Learning/img",
     "Untitled.md",
     "Things to do.md",
-    "Life.md",
     "Deep Learning",
     "Quantitative Finance.md",
     "Untitled.base",
@@ -267,7 +267,6 @@
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek02.png",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek01.png",
     "Financial Engineering/Stochastic Modelling/Terms.md",
-    "Financial Engineering/Stochastic Modelling/unit one/imgs/figure1.png",
-    "Welcome.md"
+    "Financial Engineering/Stochastic Modelling/unit one/imgs/figure1.png"
   ]
 }
