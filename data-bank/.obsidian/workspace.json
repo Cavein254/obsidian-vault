@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Things to do.md",
+                "file": "Stuff that needs attention.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Things to do"
+              "title": "Stuff that needs attention"
             }
           },
           {
@@ -226,13 +226,13 @@
   },
   "active": "5fde071a32a13551",
   "lastOpenFiles": [
+    "Things to do.md",
     "Deep Learning/Hyper-Parameter Optimization.md",
     "Deep Learning/img/train.png",
     "Life.md",
     "img.md",
     "Deep Learning/img",
     "Untitled.md",
-    "Things to do.md",
     "Deep Learning",
     "Quantitative Finance.md",
     "Untitled.base",
