@@ -67,10 +67,14 @@
             "id": "dd50fe45a7818579",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "blog/Unreal.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Unreal"
             }
           }
         ],
@@ -233,9 +237,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0455932382d3987f",
+  "active": "dd50fe45a7818579",
   "lastOpenFiles": [
-    "Untitled",
+    "blog/Unreal.md",
+    "blog",
     "Deep Learning/Hyper-Parameter Optimization.md",
     "Stuff that needs attention.md",
     "Things to do.md",
@@ -271,7 +276,6 @@
     "Financial Engineering/Stochastic Modelling/unit two/Option Pricing Model.md",
     "Financial Engineering/Stochastic Modelling/unit one/Option Valuation.md",
     "2025-08-22.md",
-    "Personal",
     "Computer Engineering/Unix/Shell Scripting.md",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek03.png",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek02.png",
