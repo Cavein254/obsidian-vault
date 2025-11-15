@@ -62,9 +62,19 @@
               "icon": "lucide-file",
               "title": "Hyper-Parameter Optimization"
             }
+          },
+          {
+            "id": "dd50fe45a7818579",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -200,12 +210,11 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -224,10 +233,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5fde071a32a13551",
+  "active": "0455932382d3987f",
   "lastOpenFiles": [
-    "Things to do.md",
+    "Untitled",
     "Deep Learning/Hyper-Parameter Optimization.md",
+    "Stuff that needs attention.md",
+    "Things to do.md",
     "Deep Learning/img/train.png",
     "Life.md",
     "img.md",
@@ -245,7 +256,6 @@
     "Future idea.md",
     "Blender.md",
     "Index.base",
-    "Stuff that needs attention.md",
     "Quantconnect.md",
     "Notes.md",
     "Django Packages'.md",
