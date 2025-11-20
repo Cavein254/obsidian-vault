@@ -4,24 +4,81 @@
     "type": "split",
     "children": [
       {
-        "id": "08dd8ba504e9e0f1",
+        "id": "318a8eacbf925668",
         "type": "tabs",
         "children": [
           {
-            "id": "6f45a5b96db08398",
+            "id": "52c154eab8121af1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "finance/test.md",
+                "file": "Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "test"
+              "title": "Untitled"
+            }
+          },
+          {
+            "id": "962ae1a2302c8519",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Quantitative Finance.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Quantitative Finance"
+            }
+          },
+          {
+            "id": "5fde071a32a13551",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Stuff that needs attention.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Stuff that needs attention"
+            }
+          },
+          {
+            "id": "bce2c8e80b4ffa17",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Deep Learning/Hyper-Parameter Optimization.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Hyper-Parameter Optimization"
+            }
+          },
+          {
+            "id": "dd50fe45a7818579",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "blog/Unreal.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Unreal"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -157,8 +214,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ]
@@ -180,47 +237,47 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6f45a5b96db08398",
+  "active": "dd50fe45a7818579",
   "lastOpenFiles": [
-    "Templates/daily.md",
     "finance/test.md",
     "finance",
-    "Daily/2025-11-19.md",
-    "Daily/daily.md",
-    "Untitled.md",
-    "Untitled",
+    "church/worship.md",
+    "church",
+    "Templates/daily.md",
     "Templates",
+    "Daily/2025-11-20.md",
+    "Daily/2025-11-19.md",
     "Daily",
-    "daily",
-    "work",
-    "personal",
-    "Untitled.base",
-    "Things to do.md",
-    "Stuff that needs attention.md",
-    "Running git locally.md",
-    "Recipies.md",
-    "Quantitative Finance.md",
-    "Quantconnect.md",
-    "Notes.md",
-    "Life.md",
-    "Future idea.md",
-    "Django Packages'.md",
-    "commands.md",
-    "Bookmarks.md",
-    "Blender.md",
     "blog/Unreal.md",
-    "Christian books/Reformed Preaching.md",
-    "Computer Engineering/Unix/Shell Scripting.md",
-    "Deep Learning/Hyper-Parameter Optimization.md",
-    "Financial Engineering/Stochastic Modelling/unit one/Option Valuation.md",
     "blog",
+    "Deep Learning/Hyper-Parameter Optimization.md",
+    "Stuff that needs attention.md",
+    "Things to do.md",
     "Deep Learning/img/train.png",
+    "Life.md",
     "img.md",
     "Deep Learning/img",
+    "Untitled.md",
+    "Deep Learning",
+    "Quantitative Finance.md",
+    "Untitled.base",
     "Untitled.canvas",
     "LinkedIn/blender stuff/Day One.md",
+    "Untitled 1.base",
+    "Untitled 2.base",
+    "Future idea.md",
+    "Blender.md",
+    "Quantconnect.md",
+    "Notes.md",
+    "Django Packages'.md",
+    "Running git locally.md",
+    "Recipies.md",
+    "Bookmarks.md",
     "Bookmarks.canvas",
+    "Christian books/Reformed Preaching.md",
+    "commands.md",
     "Financial Engineering/Stochastic Modelling/unit two/Vasicek and Bond Pricing.md",
+    "Financial Engineering/Stochastic Modelling/unit two/Vasicek Interest Rate Model.md",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek03.png",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek02.png",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek01.png",
