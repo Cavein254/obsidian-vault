@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/Unreal.md",
+                "file": "Daily/2025-11-27.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Unreal"
+              "title": "2025-11-27"
             }
           }
         ],
@@ -239,18 +239,21 @@
   },
   "active": "dd50fe45a7818579",
   "lastOpenFiles": [
+    "Daily/2025-11-19.md",
+    "Daily/2025-11-20.md",
+    "Daily/2025-11-25.md",
+    "Daily/2025-11-27.md",
+    "Templates/daily.md",
+    "Notes.md",
+    "blog/Unreal.md",
     "work",
     "personal",
     "finance/test.md",
     "finance",
     "church/worship.md",
     "church",
-    "Templates/daily.md",
     "Templates",
-    "Daily/2025-11-20.md",
-    "Daily/2025-11-19.md",
     "Daily",
-    "blog/Unreal.md",
     "blog",
     "Deep Learning/Hyper-Parameter Optimization.md",
     "Stuff that needs attention.md",
@@ -265,11 +268,9 @@
     "Untitled.base",
     "Untitled.canvas",
     "LinkedIn/blender stuff/Day One.md",
-    "Untitled 1.base",
     "Future idea.md",
     "Blender.md",
     "Quantconnect.md",
-    "Notes.md",
     "Django Packages'.md",
     "Running git locally.md",
     "Recipies.md",
@@ -277,7 +278,6 @@
     "Bookmarks.canvas",
     "Christian books/Reformed Preaching.md",
     "commands.md",
-    "Financial Engineering/Stochastic Modelling/unit two/Vasicek and Bond Pricing.md",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek03.png",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek02.png",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek01.png",
