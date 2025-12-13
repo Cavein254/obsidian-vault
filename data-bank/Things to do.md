@@ -8,6 +8,7 @@ tags: []
 - [ ] Read # The E-Myth Revisited: Why Most Small Businesses Don't Work and What to Do About It
 - [ ] https://www.youtube.com/watch?v=ccOk5JWg1Qg&list=PLda3VoSoc_TQrLrt-voecHs0Mb5qzk2S3
 - [ ] https://www.robkhenderson.com/
+- [ ] https://www.youtube.com/watch?v=L16QLILObhQ
 
 # Blog Resources
 - [ ] Implementing Gramian Angular Field (GAF) for financial time series data 
