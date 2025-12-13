@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "318a8eacbf925668",
+        "id": "4075827c103275c1",
         "type": "tabs",
         "children": [
           {
-            "id": "dd50fe45a7818579",
+            "id": "ac00b38daf7916a8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Things to do.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Things to do"
+              "title": "New tab"
             }
           }
         ]
@@ -180,12 +176,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "dd50fe45a7818579",
+  "active": "ac00b38daf7916a8",
   "lastOpenFiles": [
+    "Things to do.md",
+    "2026 Road Path.md",
     "blog/Unreal.md",
     "Untitled.md",
     "Untitled.base",
-    "Things to do.md",
     "Stuff that needs attention.md",
     "Notes.md",
     "finance/test.md",
