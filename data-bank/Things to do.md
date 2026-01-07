@@ -13,6 +13,7 @@ tags: []
 - [ ] **Search Engines: Information Retrieval in Practice"** by W. Bruce Croft et al.
 - [ ] **"The Probabilistic Relevance Framework: BM25 and Beyond"** by Robertson and Zaragoza.
 - [ ] https://www.youtube.com/watch?v=TW9vHU1GpU4&start=0
+- [ ] https://www.youtube.com/watch?v=jgiMagdjA1s
 
 # Blog Resources
 - [ ] Implementing Gramian Angular Field (GAF) for financial time series data 
