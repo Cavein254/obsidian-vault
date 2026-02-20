@@ -71,7 +71,7 @@ Open your terminal in your project root and run these two commands:
 
 Bash
 
-```
+```bash
 docker build -t tauri-test-20-04 -f Dockerfile.test .
 ```
 
@@ -79,7 +79,7 @@ docker build -t tauri-test-20-04 -f Dockerfile.test .
 
 Bash
 
-```
+```bash
 docker run --rm -v $(pwd)/src-tauri/target:/app/src-tauri/target tauri-test-20-04
 ```
 
