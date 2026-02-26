@@ -23,41 +23,42 @@ Create a file named `Dockerfile.test` in your project root. This environment mim
 Dockerfile
 
 ```
-FROM ubuntu:20.04
+# Use Ubuntu 22.04 for maximum AppImage compatibility (GLIBC)
+FROM ubuntu:22.04
 
-# Prevent prompts during installation
 ENV DEBIAN_FRONTEND=noninteractive
+# Required for AppImage tools to run inside Docker
+ENV APPIMAGE_EXTRACT_AND_RUN=1 
 
-# Install system dependencies
+# 1. Install System Dependencies
 RUN apt-get update && apt-get install -y \
     curl \
     wget \
     build-essential \
-    libwebkit2gtk-4.0-dev \
+    pkg-config \
     libssl-dev \
     libgtk-3-dev \
+    libwebkit2gtk-4.1-dev \
     libayatana-appindicator3-dev \
     librsvg2-dev \
     git \
-    pkg-config
+    libfuse2 \
+    file \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install Node.js (Version 20)
+# 2. Install Node.js 20 (LTS)
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs
 
-# Install Rust
+# 3. Install Rust
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 
+# 4. Workspace setup
 WORKDIR /app
 
-# Copy your project files
-COPY . .
-
-# Install frontend dependencies
-RUN npm install
-
-# Command to build (verifying that compilation works on 20.04)
+# We don't COPY the code here because we will mount it at runtime 
+# to get the build artifacts back out easily.
 CMD ["npm", "run", "tauri", "build"]
 ```
 
@@ -77,13 +78,18 @@ docker build -t tauri-test-22-04 -f Dockerfile.test .
 
 ### **Step B: Run the Build**
 
+Run this whenever you want to generate your AppImage:
+
 Bash
 
-```bash
-docker run --rm -v $(pwd)/src-tauri/target:/app/src-tauri/target tauri-test-22-04
+```
+docker run --rm -v "$(pwd):/app" tauri-test-22-04
 ```
 
-> **Note:** The `-v` (volume) flag maps your local `target` folder to the container's. This way, once the build finishes inside Docker, the resulting `.AppImage` will appear in your local project folder.
+**Breakdown of the command:**
 
----
-
+- `--rm`: Automatically deletes the container after the build finishes (saves disk space).
+    
+- `-v "$(pwd):/app"`: **The Bind Mount.** It takes your current folder (`$(pwd)`) and maps it to `/app` inside the container.
+    
+- The `CMD` in the Dockerfile kicks in and starts the build.
