@@ -48,9 +48,23 @@
               "icon": "lucide-file",
               "title": "Tauri release notes"
             }
+          },
+          {
+            "id": "3e83f88b05d0edf6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Theological topics.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Theological topics"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -209,10 +223,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b914cb56fef293a3",
+  "active": "3e83f88b05d0edf6",
   "lastOpenFiles": [
-    "commands.md",
+    "Theological topics.md",
     "Tauri release notes.md",
+    "commands.md",
     "Bookmarks.md",
     "Django Packages'.md",
     "Future idea.md",
@@ -247,7 +262,6 @@
     "Daily",
     "blog",
     "Deep Learning/img/train.png",
-    "img.md",
     "Untitled.canvas",
     "Bookmarks.canvas",
     "Financial Engineering/Stochastic Modelling/unit two/img/vasicek03.png",
