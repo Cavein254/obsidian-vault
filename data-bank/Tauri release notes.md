@@ -72,7 +72,7 @@ Open your terminal in your project root and run these two commands:
 Bash
 
 ```bash
-docker build -t tauri-test-20-04 -f Dockerfile.test .
+docker build -t tauri-test-22-04 -f Dockerfile.test .
 ```
 
 ### **Step B: Run the Build**
@@ -80,7 +80,7 @@ docker build -t tauri-test-20-04 -f Dockerfile.test .
 Bash
 
 ```bash
-docker run --rm -v $(pwd)/src-tauri/target:/app/src-tauri/target tauri-test-20-04
+docker run --rm -v $(pwd)/src-tauri/target:/app/src-tauri/target tauri-test-22-04
 ```
 
 > **Note:** The `-v` (volume) flag maps your local `target` folder to the container's. This way, once the build finishes inside Docker, the resulting `.AppImage` will appear in your local project folder.
