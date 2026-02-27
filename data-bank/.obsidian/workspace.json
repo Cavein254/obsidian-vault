@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -223,7 +223,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3e83f88b05d0edf6",
+  "active": "b914cb56fef293a3",
   "lastOpenFiles": [
     "Theological topics.md",
     "Tauri release notes.md",
