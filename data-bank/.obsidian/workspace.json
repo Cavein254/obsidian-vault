@@ -63,8 +63,7 @@
               "title": "Theological topics"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -223,10 +222,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b914cb56fef293a3",
+  "active": "ac00b38daf7916a8",
   "lastOpenFiles": [
-    "Theological topics.md",
     "Tauri release notes.md",
+    "Theological topics.md",
     "commands.md",
     "Bookmarks.md",
     "Django Packages'.md",

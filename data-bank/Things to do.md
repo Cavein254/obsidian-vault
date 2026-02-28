@@ -3,6 +3,8 @@ id: Things to do
 aliases: []
 tags: []
 ---
+- [ ] Read contributing and about plaaywrite
+https://github.com/marimo-team/marimo/blob/main/CONTRIBUTING.md
 - [ ] https://www.youtube.com/watch?v=Vbj2Zzwg8jc
 - [ ] Read # Friends, Partners, and Lovers: What It Takes to Make Your Marriage Work
 - [ ] Read # The E-Myth Revisited: Why Most Small Businesses Don't Work and What to Do About It
