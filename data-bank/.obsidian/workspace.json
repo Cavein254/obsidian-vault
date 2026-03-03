@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/Salvation By Grace Through Faith.md",
+                "file": "blog/Great Commission.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Salvation By Grace Through Faith"
+              "title": "Great Commission"
             }
           }
         ],
@@ -251,10 +251,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0455932382d3987f",
+  "active": "a8385ffbbf5f1058",
   "lastOpenFiles": [
-    "blog/Theological topics.md",
     "blog/Salvation By Grace Through Faith.md",
+    "blog/Theological topics.md",
     "blog/Great Commission.md",
     "blog/Article Dump.md",
     "Tauri release notes.md",
