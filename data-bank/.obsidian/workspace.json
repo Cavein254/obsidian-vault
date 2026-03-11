@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/Great Commission.md",
+                "file": "blog/Theological topics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Great Commission"
+              "title": "Theological topics"
             }
           }
         ],
@@ -253,10 +253,10 @@
   },
   "active": "a8385ffbbf5f1058",
   "lastOpenFiles": [
+    "blog/Article Dump.md",
+    "blog/Great Commission.md",
     "blog/Salvation By Grace Through Faith.md",
     "blog/Theological topics.md",
-    "blog/Great Commission.md",
-    "blog/Article Dump.md",
     "Tauri release notes.md",
     "commands.md",
     "blog/Unreal.md",
